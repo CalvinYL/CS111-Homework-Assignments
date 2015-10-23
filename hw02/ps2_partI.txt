@@ -1,0 +1,74 @@
+Problem 1: Evaluating expressions
+
+i. x / y --> 21 / 4 = 5
+   x / z --> 21 / 4.0 = 5.25
+These two are different because since the first pair of values being divided are both integers, they will only produce an integer as the answer, discarding the fractional remainder of the result.
+However, because one of the values in the second pair is stated as a double, the expression will produce the full value of the division, including the fractional remainder.
+
+ii. x + y --> 21 + 4 = 25
+   "x" + "y" --> "21" + "4" 214
+These are different because the second expression is only stating the numbers and putting the two statements together instead of adding them like the first one did.
+
+iii. (int)(n / y * y) --> (int)(14.0 / 4 * 4) --> (int)(14.0/16) = (int)0.0 = 0
+     (int)n / y * y --> (int)14.0 / 4 * 4 --> 14/16 = 0
+These two expressions produce a value of just 0.
+Because there are parentheses that surround the int and n / y * y separately in the first, everything in the second parentheses will become integers.
+Because there is an int in front of n, n becomes an integer and thus the equation becomes an interger division.
+
+iv. 11 + 1 + " CS " --> 12 CS
+    " CS " + 11 + 1 --> CS 111
+These are different because addition operators are evaluated from left to right.
+In the first, 11 will be added to 1 to make 12 and then added to CS to produce 12 CS.
+However, for the second one, because CS has been stated first, 11 and 1 will simply attach onto the end of CS instead of adding together to make 12.
+
+
+
+Problem 2: Mixing data types
+
+i. int a = r/s --> int a = 11/2 --> int a = 5
+
+ii. double b = r/s --> double b = 11/2 --> double b = 5 --> double b = 5.0
+
+iii. int c = 7.0
+This is not valid because a double value cannot be assigned to an integer.
+Must declare "double c = t" for the program to compile.
+
+iv. double d = u --> double d = 7 --> double d = 7.0
+
+
+
+Problem 3: Expressions and assignment statements
+
+i. num = val + 10
+
+ii. val = val * 3
+
+iii. val = num / 100
+
+iv. val = num % 1000 / 100
+
+v.
+num = 10
+val = 3
+num = 10-5 = 5
+val = val + num --> val = 3 + 5 = 8
+num = num % 2 --> 5 % 2 = 1
+
+
+Problem 4: Binary numbers
+
+i. 
+1010 --> 2^1 + 2^4 = 2 + 16 = 18
+101101 --> 2^0 + 2^2 + 2^3 + 2^5 = 1 + 4 + 8 + 32 = 45
+
+ii. 
+35 = 32 + 3
+   = 2^5 + 2 + 1
+   = 2^5 + 2^1 + 2^0
+   = 100011
+
+71 = 64 + 7
+   = 2^6 + 4 + 3
+   = 2^6 + 2^2 + 2^1 + 1
+   = 2^6 + 2^2 + 2^1 + 2^0
+   = 1000111

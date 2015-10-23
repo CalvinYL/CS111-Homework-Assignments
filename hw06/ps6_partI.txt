@@ -1,0 +1,70 @@
+Calvin Yung, cyung20@bu.edu
+
+1) Understanding code that uses an array
+
+a. 
+Output
+5 8
+[2, 4, 7, 8, 10]
+
+b.
+Output
+3 8 8
+This makes sense because after the for loop (which copied x's array to y),
+because none of the references within x was changed, y did not change.
+However, since a value in y changed after z copied y's array, 
+z also experienced the change because it will always be a direct copy of y.
+
+c.
+This method accepts three parameters (an array and two ints) and 
+uses a for loop in order to shift the values in the array to the right
+until j is no longer greater than i. After the for loop comes to an end,
+the value at which i is (in the array) is changed to whatever value n is.
+
+
+2) Methods that take an array as a parameter
+
+
+public static void scale(int[] data, int factor) {
+    for (int i = 0; i < data.length; i++) {
+        data[i] *= factor;
+    }
+}
+
+public static int schoolNumber(String school) {
+    for (int i = 0; i < SCHOOL_ABBREVS.length; i++) {
+        if (SCHOOL_ABBREVS[i].equals(school)){
+            return i;
+        }
+    }
+    return -1;
+}
+
+public static boolean hasNegative(int[] data) {
+    for (int i = 0; i < data.length; i++) {
+        if (data[i] < 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+3) Two-dimensional arrays
+
+a. twoD[1][2] = 15
+b. 
+
+int i = twoD.length - 1;
+for (int j = 0; j < twoD.length; j++) {
+    System.out.println(twoD[i][j]);
+}
+
+c.
+
+int j = 0;
+for (int i = twoD.length - 1; i >= 0; i--) {
+    System.out.println(twoD[i][j]);
+    j++;
+            
+}

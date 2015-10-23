@@ -1,0 +1,73 @@
+Calvin Yung, cyung20@bu.edu
+
+Part I: Short-Answer Problems
+
+1a)
+
+for (int i = 0; i < 5; i++) {
+    System.out.println("Go Terriers!");
+}
+
+1b)
+
+for (int i = 5; i > 0; i--) { 
+    System.out.println(i);
+}
+
+2a)
+
+i      j      value printed
+
+2      2      none (exit the inner loop)
+4      2      6
+4      3      7
+4      4      none (exit the inner loop)
+6      2      8
+6      3      9
+6      4      10
+6      5      11
+6      6      none (exit the inner loop)
+
+2b)
+
+for (int i = 1; i < 4; i++) {
+    System.out.println("** " + i + " **");
+    for (int j = 3; j >= i; j--) { 
+        System.out.println(i + " " + j);
+    }
+}
+
+3a) 
+
+line   colons   equals
+
+1      10       1
+2      7        3
+3      4        5
+4      1        7
+
+3b)
+
+colons: -3 * line + 13
+equal signs: 2 * line - 1
+
+3c)
+
+
+for (int line = 1; line <= 4; line ++) {
+    for (int i = 0; i < -3 * line + 13; i++) {
+        System.out.print(":");
+    }
+    for (int i = 0; i < 2 * line - 1; i++) {
+        System.out.print("=");
+    }
+    System.out.println();
+}    
+
+
+4a) Only x
+4b) a, b, i, j, and x
+4c) a, i, and x
+4d) x, i, and y
+4e) Only c
+4f) c and d

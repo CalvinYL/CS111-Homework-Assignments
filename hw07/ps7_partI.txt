@@ -1,0 +1,78 @@
+Calvin Yung, cyung20@bu.edu
+
+1) Recursive printing
+
+a.
+This method prints out the letters of the alphabet chronologically
+until it reaches the letter that corresponds with the inputted
+number.
+
+b.
+The base case is: if (n <= 0)
+
+c.
+No because no matter how large the number is, it will continue
+being subtracted by one, eventually becoming 0, meeting the if 
+statement condition and thus reaching the base case.
+
+d.
+printSomthing(3);
+    System.out.println((char)('a' + 2));
+    printSomething(2);
+        System.out.println((char)('a' + 1));
+        printSomething(1);
+            System.out.println((char)('a' + 0));
+            printSomething(0);
+            return
+        return
+    return
+
+e.
+public static void printSomething(int n) {
+    if (n <= 0) {
+        return;
+    }
+        
+    char[] letter = new char[n];
+    int i = 0;
+    letter[i] = (char)('a' + n - 1);
+    System.out.println(letter[i]);
+    i++;
+    printSomething(n - 1);
+}
+
+2) A recursive method that returns a value
+
+a.
+main() calls mystery(20, 6)
+    mystery(20, 6) calls mystery(14, 6)
+        mystery(14, 6) calls mystery(8, 6)
+            mystery(8, 6) calls mystery(2, 6)
+                mystery(2, 6) calls mystery(-4, 6)
+                    mystery(-4, 6) returns 1
+                mystery(2, 6) returns 2 + 1 or 3
+            mystery(8, 6) returns 2 + 3 or 5
+        mystery(14, 6) returns 2 + 5 or 7
+    mystery(20, 6) returns 2 + 7 or 9
+main()
+
+b.
+The value returned by mystery(20, 6) is 9.
+
+c.
+There are 5 method frames on the stack when the base case is reached.
+
+d.
+mystery(1, -1) would produce an infinite recursion because a will
+always increase in value based on the equation (a - b) and thus
+will never become 0 or reach the base case.
+
+e.
+if(a >= 0 && b <= 0) 
+because if b can only be a negative number, as like the previous
+question, a will never reach the base case since it will continue 
+increasing in value (or if both a and b are 0, a will always remain at 0).
+
+
+
+

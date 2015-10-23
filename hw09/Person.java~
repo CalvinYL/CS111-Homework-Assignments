@@ -1,0 +1,58 @@
+public class Person {
+    private String name;
+    private Date dob;
+    
+    /*
+     * This constructor takes a String for a Person's name and a Date for the
+     * person's date of birth and ensures that a null or empty string cannot be
+     * passed into the parameters.
+     */
+    public Person(String iName, Date iDob) {
+        if (iName == null || iName.equals("") || iDob == null) {
+            throw new IllegalArgumentException();
+        }
+    }
+    
+    /*
+     * Returns the Person's name as a String.
+     */
+    public String getName() {
+        return this.name;
+    }
+    
+    /*
+     * Returns the Person's date of birth as a Date.
+     */
+    public Date getDOB() {
+        return this.dob;
+    }
+    
+    /*
+     * Takes an integer parameter representing a year, and creates and 
+     * returns a Date object representing the date on which the person's 
+     * birthday falls in that year.
+     */
+    //public Date getBirthdayIn(int year) {
+    //    Date d1 = new Date(0, 0, year);
+    //    int mon = d1.getMonth();
+    //    int day = d1.getDay();
+    //    int iyear = d1.getYear();
+    //    return mon + "/" + day + "/" + iyear;
+    //}
+    
+    /*
+     * Takes a parameter of type Date and returns an integer representing the
+     * person's age in years on that date.
+     */
+    public int getAgeOn(Date d) {
+        if (Date.isBefore()) {
+            throw new IllegalArgumentException();
+        }
+    
+    
+    
+    
+    
+    
+}
+            

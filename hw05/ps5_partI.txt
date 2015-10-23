@@ -1,0 +1,98 @@
+Calvin Yung, cyung20@bu.edu
+
+
+1) Processing even integers
+
+public static void processEvens(int n) {
+    int num = 2;
+    int sum = 2;
+    if (n > 0) {
+        while (num < n * 2) {
+            System.out.print(num);
+            num += 2;
+            System.out.print("--");
+            sum = sum + num;             
+        }
+        System.out.print(num);
+        System.out.println();
+        System.out.println("the sum of these integers is " + sum);
+    }
+}
+
+2a) Indefinite loop basics
+
+i.   This is an indefinite loop that performs 5 iterations.
+ii.  This loop will not perform any iterations.
+iii. This loop will not perform any iterations.
+iv.  This loop has an infinite number of iterations.
+
+2b) 
+
+public static void countDown(int n) {
+    int count = n;
+    while (count >= 1) {
+        System.out.println(count);
+        count--;
+    }
+}
+
+3) Loops and boolean expressions
+
+a. while (num >= 10 && num < 50)
+b. while (num > 0 || (num - 1) % 2 = 0)
+c. while (num % 3 != 0)
+d. while (num % Math.sqrt(num) != 0.0)
+e. 
+
+Scanner console = new Scanner(System.in);
+int num;
+boolean validInput = false;
+while (!validInput) {
+    System.out.print("Enter a number: ");
+    num = console.nextInt();
+    validInput = num < 10;
+}
+
+4) Reading from a file
+
+a. 
+
+Output
+111
+02215
+3.1495
+90.9
+are
+numbers.
+These
+are,
+too:
+31.0
+26
+That's
+it!
+count: 13
+
+b.    
+
+Output
+111     02215      3.1495 90.9 are numbers.
+   These are, too: 31.0  26     
+That's it!
+count: 3
+
+c.
+
+Output
+111.0
+2215.0
+3.1495
+90.9
+count = 4
+
+d.
+
+Output
+111
+2215
+count: 2

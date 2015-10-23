@@ -1,0 +1,85 @@
+Calvin Yung, cyung20@bu.edu
+
+1) Methods w/ parameters and return values
+
+a.
+
+method		main
+
+x	y	x	y	
+1	3	1	3
+4 	2	4	27
+3	3
+6	0
+3	4
+6	2
+
+x = compute(1, 3)			y = 3 + (4 * compute(3, 4))		
+[x = 4  y = 2 * 3 - 4 = 2]  		[x = 6  y = 2 * 4 - 6 = 2]             
+print 4 2				print 6 2	
+return x = 4 [x changes to 4]		return x = 6
+					y = 3 + (4 * 6) = 27 [y changes to 27]
+compute(3, 3)
+[x = 6  y = 2 * 3 - 6 = 0]
+print 6 0
+return x = 6 [no change to x]
+
+Output
+4 2
+4 3
+6 0
+4 3
+6 2
+4 27
+
+b.
+
+public static double discountPrice(double originalPrice, int percentDiscount) {
+    double newPrice = originalPrice - (percentDiscount/100.0)*originalPrice; 
+    return newPrice;
+}
+
+
+2) Using String objects
+
+a.     i) me
+      ii) 0
+     iii) 7
+      iv) Method
+       v) mess
+
+
+b.     i) str1 + str2
+      ii) str1.charAt(5)
+     iii) str2.substring(6,9)
+      iv) str2.toUpperCase().charAt(4) + str2.trim().substring(10, 12)
+       v) str2.substring(0, 13).replace('S', 'P')    
+
+c. This method places a forward slash (/) before each letter in a given word.
+
+3) Conditional execution
+
+a. Outputs:
+ 
+i) Trees
+   Chestnut
+   Done
+ii) Trees
+    Larch
+    Done
+iii) Cheese Shoppe
+     Cheddar
+     Gouda
+     Done
+iv) Spam Please!
+    Done
+v) It's a late parrot!
+   Done
+
+b.
+
+The println statement that will not be executed for any sets of inputs is "Swiss"
+because in order for Swiss to be printed, the value of c must be equal to the
+value of b. However, the "else if" statement that Swiss is in requires that
+b is less than c in order to be executed, therefore b will never equal c and
+Swiss cannot be printed.

@@ -1,0 +1,45 @@
+1a)
+
+i) The following produce an error message:
+'xyz'
+'\'
+'//'
+ii) The lexical error is specified at the beginning of the error message
+
+
+1b)
+
+i) 100, 101, 102, 68, 69, 70,48, 49, 50 respectively
+ii) The number we are given correspond to the letter/number we input into the command prompt. As the letter/number we input increases chronologically, the number we receive will experience the same amount of change.
+iii) The first three produce a lexical error, but the next three provide a letter depending on the number that is added to 'A'. This letter is determined by how many letters it is away from the letter 'A'.
+iv) (char) ('C' +4)
+
+
+2a) Fixed program:
+
+public class MyProgram {
+    public static void main (String[] args) {
+        System.out.println("This code is problematic!");
+        System.out.println("Can you get it to compile?");
+    }
+} 
+
+
+2b)
+
+The following names are not valid identifiers:
+'class' because an identifier cannot be the same as a keyword that is part of the language
+'total value' because identifiers may not contain spaces
+'7dwarfs' because identifiers may only begin with a letter, $, or _
+
+
+2c)
+
+System.out.println("///\\\\\\ \\\\// /'\\");
+System.out.println("\"Hi\", said Perry. \"What's new?\"");
+System.out.println("\"Not much\", said Libby. \"What's new with you?\"");
+
+3) The output of the program is:
+
+hello hello bye hello see ya hello bye
+

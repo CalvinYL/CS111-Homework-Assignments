@@ -1,0 +1,61 @@
+Calvin Yung, cyung20@bu.edu
+
+1) Our Rectangle class revisited
+
+a.
+i)  Shrink would be a mutator because it is changing the values' states.
+ii) public void shrink(int amount) {
+
+b.
+i)  diagonal would be an accessor because it is retrieving information
+    and is not changing anything.
+ii) public int diagonal() {
+
+c.
+i)  It won't compile because width, x, and y are all private in the Rectangle class,
+    which prevents us from changing them.
+ii) 
+Rectangle rect = new Rectangle(10, 20, 30, 40);
+System.out.println("width = " + rect.getWidth());
+int x = rect.getX();
+x = rect.getX() + rect.getY();
+System.out.println(rect);
+
+2) A class that needs your help
+
+a.
+We would need to change the method to a non-static one (by removing the word
+static from the header) and inserting (int a, double b) as the parameters
+for bar. Essentially --> public double bar(int a, double b) {
+
+b. Rewritten version:
+
+public class Foo {
+    private int a;
+    private double b;
+    
+    public double bar(int a, double b) {
+        return this.a * this.b;
+    }
+    
+    public int getA() {
+        return this.a;
+    }
+    
+    public double getB() {
+        return this.b;
+    }
+    
+    public void changeValues(int newA, double newB) {
+        if (newA % 2 != 0 || newB < 0) {
+            throw new IllegalArgumentException("a must be even and b must be greater than or equal to 0");
+        }
+
+        this.a = newA;
+        this.b = newB;
+    }
+    
+    public Foo(int initialA, double initialB) {
+        this.changeValues(initialA, initialB);
+    } 
+}

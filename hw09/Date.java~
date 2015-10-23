@@ -1,0 +1,215 @@
+/*
+ * Date.java - a blueprint class for objects that represent
+ * an individual date.
+ * 
+ * starter code by: Computer Science 111, Boston University
+ * 
+ * completed by:
+ */
+
+public class Date {
+    /* a class constant for the smallest allowed year */
+    public static final int MIN_YEAR = 1583;    
+    
+    /*
+     * A class-constant array containing the names of the months.
+     * The positions of the names in the array correspond to the 
+     * numbers of the months. For example, "January" is at position 1
+     * in the array because its month number is 1, and "December" is in 
+     * position 12 because its month number is 12.
+     * The string "none" appears in position 0, because there 
+     * is no month that corresponds to the number 0.
+     */
+    public static final String[] MONTHS = {"none", "January", "February",
+        "March", "April", "May", "June", "July", "August",
+        "September", "October", "November", "December"};
+    
+    /*
+     * A class-constant array containing the number of days in each
+     * month. Here again, the positions of the values correspond to the 
+     * numbers of the months. For example, NUM_DAYS[1] is 31, because
+     * January (month 1) has 31 days, and NUM_DAYS[2] is 28, because
+     * February usually has 28 days.
+     * -1 appears in position 0, because there is no month that 
+     * corresponds to the number 0.
+     */
+    public static final int[] NUM_DAYS = {-1, 31, 28, 31, 30, 31, 30,
+        31, 31, 30, 31, 30, 31};
+    
+    /*
+     * A class-constant array containing the names of the days of the week.
+     */
+    public static final String[] DAYS_OF_WEEK = {"Sunday", "Monday",
+        "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    
+    /*
+     * dayOfWeekNumber - a static helper method that takes a month number, 
+     * day number, and year as parameters, and returns the *number* of the
+     * day of the week on which the corresponding date falls:
+     * 0 for Sunday, 1 for Monday, 2 for Tuesday, etc.
+     * The algorithm for computing the appropriate number comes from 
+     * Robert Sedgewick and Kevin Wayne.
+     */
+    public static int dayOfWeekNumber(int month, int day, int year) {
+        int y0 = year - (14 - month)/12;
+        int x = y0 + y0/4 - y0/100 + y0/400;
+        int m0 = month + 12*((14 - month)/12) - 2;
+        
+        return (day + x + (31*m0)/12) % 7;
+    }    
+    
+    /*
+     * This method takes a year (int) as the parameter and returns true if
+     * the year is a leap year or false if it is not.
+     */
+    public static boolean isLeapYear(int year) {
+        if (year % 100 == 0 && year % 400 == 0) {
+            return true;
+        }
+        if (year % 4 == 0 && year % 100 != 0) {
+            return true;
+        }
+        return false;
+    }
+    
+    /*
+     * This method takes a month (int) and year (int) and returns the number
+     * of days in the specified month of a given year.
+     */
+    public static int numDaysInMonth(int month, int year) {
+        if (month == 2 && year % 4 == 0 && year % 100 != 0) {
+            return 29;
+        }
+        if (month == 2 && year % 100 == 0 && year % 400 == 0) {
+            return 29;
+        }
+        for (int i = 0; i < NUM_DAYS.length; i++) {
+            if (i == month) {
+                return NUM_DAYS[i];
+            }
+        }
+        return 0;
+    } 
+        
+    private int month;
+    private int day;
+    private int year;
+    
+    /*
+     * This constructor takes three int parameters and ensures only
+     * valid values are assigned to the object's fields.
+     */
+    public Date(int iMonth, int iDay, int iYear) {
+        if (iYear < MIN_YEAR) {
+            throw new IllegalArgumentException();
+        }
+        if (iMonth < 1 || iMonth > 12) {
+            throw new IllegalArgumentException();
+        }
+        int x = numDaysInMonth(iMonth, iYear);
+        if (iDay < 1 || iDay > x) {
+            throw new IllegalArgumentException();
+        }
+        this.month = iMonth;
+        this.day = iDay;
+        this.year = iYear;
+    }
+    
+    /*
+     * Returns the month component of a Date object as an integer.
+     */
+    public int getMonth() {
+        return this.month;
+    }
+    
+    /*
+     * Returns the day component of a Date object as an integer.
+     */
+    public int getDay() {
+        return this.day;
+    }
+    
+    /*
+     * Returns the year component of a Date object as an integer.
+     */
+    public int getYear() {
+        return this.year;
+    }
+    
+    /*
+     * Returns the name of a Date object's month.
+     */
+    public String monthName() {
+        return MONTHS[this.month];
+    }
+    
+    /*
+     * Returns the name of the day of the week on which a Date falls.
+     */
+    public String dayOfWeekName() {
+        return DAYS_OF_WEEK[dayOfWeekNumber(this.month, this.day, this.year)];
+    }
+    
+    /*
+     * Returns a String representation of a Date object in the form:
+     * "day_of_week, month_name day, year"
+     */ 
+    public String toString() {
+        return dayOfWeekName() + ", " + monthName() + " " + getDay() + ", " + getYear();
+    }
+    
+    /*
+     * This method takes a Date object as a parameter and determines if it is 
+     * equivalent to the calling object, returning true if it is and false if it is not.
+     */
+    public boolean equals(Date d) {
+        return (d != null
+              && this.month == d.month
+              && this.day == d.day
+              && this.year == d.year);
+    }
+    
+    /*
+     * This method takes a Date object as a parameter and returns true if the calling
+     * Date object comes before the Date passed in as a parameter and false if it doesn't.
+     */
+    public boolean isBefore(Date d) {
+        if (d != null && this.year < d.year) {
+            return true;
+        }
+        if (d != null && this.year == d.year && this.month < d.month) { 
+            return true;
+        }
+        if (d != null && this.year == d.year && this.month == d.month && this.day == d.day) {
+            return false;
+        }
+        return (d != null && this.year == d.year && this.month == d.month && this.day < d.day);
+        
+    }
+
+    /*
+     * This method takes a Date object as a parameter and returns true if the calling
+     * Date object comes after the Date passed in as a parameter and false if it doesn't.
+     */
+    public boolean isAfter(Date d) {
+        if (d != null 
+              && this.year == d.year 
+              && this.month == d.month 
+              && this.day == d.day) {
+            return false;
+        }
+        return (d != null
+              && !isBefore(d));
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+            
